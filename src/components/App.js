@@ -37,6 +37,22 @@ class App extends Component {
     this.multi = this.multi.bind(this);
     this.setCardCounts = this.setCardCounts.bind(this);
     this.handleSetType = this.handleSetType.bind(this);
+
+    let self = this;
+
+    Api
+    .getBanners()
+    .then(function(data) {
+      var options = [];
+
+      for (var [key, value] of Object.entries(data)) {
+        options.push({name:key, value:new Date(value)});
+      }
+
+      self.setState({
+        bannerOptions: _.orderBy(options, ['value'], ['desc'])
+      })
+    });
   }
 
   handleSetType(newValue) {
@@ -84,10 +100,6 @@ class App extends Component {
   handleVersionSelect(e) {
     let self = this;
     var version = 'globalMain';
-    if (e.target.value === 'Japan')
-      version = 'japanMain';
-
-    self.setState({versionSelection: e.target.value});
 
     Api
       .getBanners(version)
@@ -166,21 +178,12 @@ class App extends Component {
           <Grid>
             <Row className="show-grid">
               <Col xs={12} md={6}>
-                <Dropdown
-                  name='Select Version'
-                  placeholder={'Choose your version'}
-                  controlFunc={this.handleVersionSelect}
-                  options={this.state.versionOptions}
-                  selectedOption={this.state.versionSelection} />
-                {this.state.versionSelection !== '' ? (
                   <Dropdown
                     name='Select Banner'
                     placeholder={'Choose your banner'}
                     controlFunc={this.handleBannerSelect}
                     options={this.state.bannerOptions}
                     selectedOption={this.state.bannerSelection} />
-                  ) : null
-                }
                 {this.state.bannerSelection !== '' ? (
                   <ButtonToolbar>
                     <ToggleButtonGroup type="radio" name="options" value={this.state.type} onChange={this.handleSetType}>
