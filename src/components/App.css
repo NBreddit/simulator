@@ -1,0 +1,68 @@
+.App {
+  text-align: left;
+}
+
+.App-header {
+  background-color: #222;
+  height: 40px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.App-image {
+  max-height:50%;
+  max-width:50%;
+}
+
+.thumb {
+	max-height:50%;
+	max-width:50%;
+	display:block;
+}
+
+.featured {
+  border: 2px solid blue;
+  border-radius: 7px;
+  -webkit-box-shadow:0 0 45px blue; 
+  -moz-box-shadow: 0 0 4px blue; 
+  box-shadow:0 0 4px blue;
+}
+
+.lr {
+  border: 2px solid #FF029E;
+  border-radius: 7px;
+  -webkit-box-shadow:0 0 8px #FF029E; 
+  -moz-box-shadow: 0 0 8px #FF029E; 
+  box-shadow:0 0 8px #FF029E;
+}
+
+.featuredlr {
+  border: 2px solid #B700FF;
+  border-radius: 7px;
+  -webkit-box-shadow:0 0 8px #B700FF; 
+  -moz-box-shadow: 0 0 8px #B700FF; 
+  box-shadow:0 0 8px #B700FF;
+}
+
+.rarity {
+    max-height:50%;
+    max-width:50%;
+    margin-left:13px;
+    margin-top:-20px;
+}
+
+.show-grid {
+  margin-top: 10px;
+}
+
+.top-margin {
+  margin-top: 20px;
+}
+
+.highlight {
+  background-color: lightgreen;
+}
