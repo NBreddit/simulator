@@ -1,6 +1,6 @@
 {
-  "name": "dokkan-summon-simulator",
-  "homepage" : "http://www.dbzdokkanstats.com/simulate/",
+  "name": "naruto-blazing-simulator",
+  "homepage" : "https://atjohns2.github.io/BlazingSimulator/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
