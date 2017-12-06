@@ -2,7 +2,7 @@ import axios from 'axios';
 
 function getAvailableBanners() {
     var request = '/BlazingSimulator/configuration/banners.json';
-    //var request = '/weights/banners.json';
+    //var request = '/configuration/banners.json';
     var instance = axios.create({
         headers: {"accept": "application/json;odata=verbose",
             "content-type": "application/json;odata=verbose"}
@@ -20,9 +20,8 @@ function getAvailableBanners() {
 
 function getBannerRates(bannerId, version) {
     var preValue = 0, summonRates = [];
-    var spaceUrl = 'https://dbz.space/cards/';
     var request = '/BlazingSimulator/configuration/banners/' + bannerId + '.json';
-    //var request = '/weights/glb/' + bannerId + '.json';
+    //var request = '/configuration/banners/' + bannerId + '.json';
 
     var instance = axios.create({
         headers: {"accept": "application/json;odata=verbose",

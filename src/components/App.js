@@ -71,9 +71,7 @@ class App extends Component {
       otherCount: 0,
       type: 'Standard',
       bannerUrl: '',
-      versionSelection: '',
       bannerSelection: '',
-      bannerOptions: [''],
       bannerRates: []
     });
   }
