@@ -2,7 +2,7 @@ import axios from 'axios';
 
 function getAvailableBanners() {
     var request = '/BlazingSimulator/configuration/banners.json';
-    //var request = '/configuration/banners.json';
+    //request = '/configuration/banners.json';
     var instance = axios.create({
         headers: {"accept": "application/json;odata=verbose",
             "content-type": "application/json;odata=verbose"}
@@ -21,7 +21,7 @@ function getAvailableBanners() {
 function getBannerRates(bannerId, version) {
     var preValue = 0, summonRates = [];
     var request = '/BlazingSimulator/configuration/banners/' + bannerId + '.json';
-    //var request = '/configuration/banners/' + bannerId + '.json';
+    //request = '/configuration/banners/' + bannerId + '.json';
 
     var instance = axios.create({
         headers: {"accept": "application/json;odata=verbose",
@@ -32,10 +32,25 @@ function getBannerRates(bannerId, version) {
         .then(function(response) {
             Object.keys(response.data).map(function(keyName, keyIndex) {
                 preValue = response.data[keyName] + preValue;
+                var rarity = keyName.toString().split('_')[1];
+                var sort = 1;
+                
+                switch (rarity) {
+                    case '5':
+                        sort = 1;
+                        break;
+                    case '4':
+                        sort = 2;
+                        break; 
+                    case '3':
+                        sort = 3;
+                        break;
+                    default: 
+                        sort = 4;
+                }
                 
                 var type = 'z-normal';
                 var id = keyName.toString().split('_')[0];
-                var rarity = 1;
                 if (rarity === 1 && response.data[keyName] > 0.01) {
                     type = 'b-featured';
                 }
@@ -44,7 +59,7 @@ function getBannerRates(bannerId, version) {
                     thumb: "flair flair-" + id,
                     value: preValue, 
                     rarity: rarity,
-                    sort: rarity,
+                    sort: sort,
                     rate: response.data[keyName],
                     type: type,
                     count: 0

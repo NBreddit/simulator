@@ -23,7 +23,7 @@ class App extends Component {
       allResults: [],
       bannerUrl: '',
       type: 'Standard',
-      totalStones: 0,
+      totalPearls: 0,
       ssrCount: 0,
       srCount: 0,
       rCount: 0,
@@ -64,7 +64,7 @@ class App extends Component {
     this.setState({
       results: [],
       allResults: [],
-      totalStones: 0,
+      totalPearls: 0,
       ssrCount: 0,
       srCount: 0,
       rCount: 0,
@@ -86,7 +86,7 @@ class App extends Component {
     this.setState({
       results: [],
       allResults: [],
-      totalStones: 0,
+      totalPearls: 0,
       ssrCount: 0,
       srCount: 0,
       rCount: 0,
@@ -141,7 +141,7 @@ class App extends Component {
     this.setCardCounts(cards, 50);
   }
 
-  setCardCounts(cards, stones) {
+  setCardCounts(cards, pearls) {
     var countSSRs = 0, countSRs = 0, countRs = 0;
     for(var i=0; i<=cards.length-1; i++)
     {
@@ -157,7 +157,7 @@ class App extends Component {
     }
     this.setState({ 
       results: cards,
-      totalStones: this.state.totalStones + stones,
+      totalPearls: this.state.totalPearls + pearls,
       allResults: _.orderBy(Summon.Compress(this.state.allResults.concat(cards)), ['type','sort','count'],['asc','asc','desc']),
       ssrCount: this.state.ssrCount + countSSRs,
       srCount: this.state.srCount + countSRs,
@@ -179,7 +179,7 @@ class App extends Component {
                     controlFunc={this.handleBannerSelect}
                     options={this.state.bannerOptions}
                     selectedOption={this.state.bannerSelection} />
-                {this.state.bannerSelection !== '' ? (
+                {/*this.state.bannerSelection !== '' ? (
                   <ButtonToolbar>
                     <ToggleButtonGroup type="radio" name="options" value={this.state.type} onChange={this.handleSetType}>
                       <ToggleButton value='Standard'>Standard</ToggleButton>
@@ -188,7 +188,7 @@ class App extends Component {
                     </ToggleButtonGroup>
                   </ButtonToolbar>
                   ) : null
-                }
+                */}
               </Col>
               {this.state.bannerSelection !== '' ? (
                 <Col xs={12} md={6}>
@@ -205,7 +205,7 @@ class App extends Component {
               </Row>
               ) : null
             }
-            {this.state.totalStones !== 0 ? (
+            {this.state.totalPearls !== 0 ? (
               <Grid>
                 <Row className="show-grid">
                 <Col xs={12} md={2}
@@ -215,10 +215,10 @@ class App extends Component {
                     ><Button bsStyle="danger" onClick={this.handleClearForm}>Reset All</Button>
                   </Col>
                   <Col xs={12} md={8}>
-                  <b>Summon Data - </b> Total Cards: {(this.state.totalStones/5)}, 
-                        SSR %: {(this.state.ssrCount/this.state.totalStones*500).toFixed(2)}, 
-                        SR %: {(this.state.srCount/this.state.totalStones*500).toFixed(2)}, 
-                        R %: {(this.state.rCount/this.state.totalStones*500).toFixed(2)}
+                  <b>Summon Data - </b> Total Cards: {(this.state.totalPearls/5)}, 
+                        5* %: {(this.state.ssrCount/this.state.totalPearls*500).toFixed(2)}, 
+                        4* %: {(this.state.srCount/this.state.totalPearls*500).toFixed(2)}, 
+                        3* %: {(this.state.rCount/this.state.totalPearls*500).toFixed(2)}
                   </Col>
                 </Row>
                 <Row className="show-grid">
@@ -228,7 +228,7 @@ class App extends Component {
                     </Panel>
                   </Col>
                   <Col xs={12} md={6}>
-                    <Panel header={this.state.allResults.length + " unique cards summoned in " + this.state.totalStones + " stones used"} bsStyle="primary">
+                    <Panel header={this.state.allResults.length + " unique cards summoned in " + this.state.totalPearls + " pearls used"} bsStyle="primary">
                       <ResultsGrid items={_.chunk(this.state.allResults, 5)} type='all' />
                     </Panel>
                   </Col>

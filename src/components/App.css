@@ -51,8 +51,11 @@
 .rarity {
     max-height:50%;
     max-width:50%;
-    margin-left:13px;
-    margin-top:-20px;
+    margin-left:-60px;
+}
+
+.counter {
+  margin-left: 30px;
 }
 
 .show-grid {
@@ -65,4 +68,8 @@
 
 .highlight {
   background-color: lightgreen;
+}
+
+td {
+  padding-left: 30px !important;
 }
