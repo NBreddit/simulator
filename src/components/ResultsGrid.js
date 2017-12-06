@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Table } from 'react-bootstrap';
 import './App.css';
-import './flairs.css';
 
 const ResultsGrid = (props) => (  
     
@@ -12,7 +11,7 @@ const ResultsGrid = (props) => (
             <tr key={index}>
             {row.map((col, index) =>
                 <td key={index}>                   
-                    <div className={col.thumb}/>
+                    <div className={col.thumb + " " + (col.type.includes('b-featured') ? 'featured' : '')} />
                     {/*<img src={col.rarity} className="rarity" alt="rarity"/>*/}
                     {props.type ==='all' ? ( <span>x{col.count}</span> ): null}
                 </td>

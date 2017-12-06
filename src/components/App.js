@@ -119,10 +119,7 @@ class App extends Component {
   handleBannerSelect(e) {
     let self = this;
     var bannerId = e.target.value.substr(0,e.target.value.indexOf(' '));
-    var banner = 'http://www.dbzdokkanstats.com/gachas/banners/gasha_top_banner_00' +	bannerId + '.png';
-    if (self.state.versionSelection === 'Japan') {
-      banner = 'http://www.dbzdokkanstats.com/jpngachas/banners/gasha_top_banner_00' +	bannerId + '.png';
-    }
+    var banner = '/BlazingSimulator/configuration/banners/'  +	bannerId + '.png';
 
     self.setState({ 
       bannerSelection: e.target.value,

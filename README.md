@@ -1,3 +1,16 @@
+## Configuration for Naruto Blazing Summon Simulator
+
+All configuration for individual banners is done in the /configuration folder of the application. Please make all changes on the https://github.com/atjohns2/BlazingSimulator/tree/gh-pages branch.
+
+- Flairs.png contains the most recent flairs for all available cards.
+- Flairs.css contains the CSS for showing those flairs within the results of the simulator
+- Banners.json lists all available banners. Each must contain a list of banners by name and given an ID in properly formatted JSON.
+- /banners/{id}.json lists all units on the banner and their pull rate in decimal form. Unit names must match their flair code to display properly.
+- /banners/{id}.png is the associated banner image for any banner
+
+
+----------------------------------------------------------------------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

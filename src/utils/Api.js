@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 function getAvailableBanners() {
-    var request = '/BlazingSimulator/weights/banners.json';
+    var request = '/BlazingSimulator/configuration/banners.json';
+    //var request = '/weights/banners.json';
     var instance = axios.create({
         headers: {"accept": "application/json;odata=verbose",
             "content-type": "application/json;odata=verbose"}
@@ -20,7 +21,8 @@ function getAvailableBanners() {
 function getBannerRates(bannerId, version) {
     var preValue = 0, summonRates = [];
     var spaceUrl = 'https://dbz.space/cards/';
-    var request = '/BlazingSimulator/weights/glb/' + bannerId + '.json';
+    var request = '/BlazingSimulator/configuration/banners/' + bannerId + '.json';
+    //var request = '/weights/glb/' + bannerId + '.json';
 
     var instance = axios.create({
         headers: {"accept": "application/json;odata=verbose",
@@ -35,7 +37,7 @@ function getBannerRates(bannerId, version) {
                 var type = 'z-normal';
                 var id = keyName.toString().split('_')[0];
                 var rarity = 1;
-                if (rarity === 1 && response.data[keyName] > 0.002) {
+                if (rarity === 1 && response.data[keyName] > 0.01) {
                     type = 'b-featured';
                 }
 
