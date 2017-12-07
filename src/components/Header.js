@@ -8,13 +8,13 @@ class Header extends React.Component {
             <Grid>
                 <Navbar.Header>
                 <Navbar.Brand>
-                    <a href="/">Naruto Blazing Summon Simulator</a>
+                    Naruto Blazing Summon Simulator
                 </Navbar.Brand>
                 <Navbar.Toggle />
                 </Navbar.Header>
                 <Navbar.Collapse>
                 <Nav pullRight>
-                    <NavItem href="/">Created by Coenl, Assets and Stats by Anton</NavItem>
+                    Created by Coenl, Assets and Stats by Anton
                 </Nav>
                 </Navbar.Collapse>
             </Grid>
