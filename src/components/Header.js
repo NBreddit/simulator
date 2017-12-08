@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Grid, Navbar, Nav } from 'react-bootstrap';
 
 class Header extends React.Component {
     render() {

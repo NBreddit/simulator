@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash'
-import { Grid, Jumbotron, Button, Row, Col, Panel, ButtonToolbar, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
+import { Grid, Jumbotron, Button, Row, Col, Panel } from 'react-bootstrap';
 import './App.css';
 import Api from '../utils/Api';
 import Summon from '../utils/Summon';
@@ -119,7 +119,7 @@ class App extends Component {
     var bannerId = e.target.value.substr(0,e.target.value.indexOf(' '));
     var banner = '/Simulator/configuration/banners/'  +	bannerId + '.png';
 
-    self.setState({ 
+    self.setState({
       bannerSelection: e.target.value,
       bannerUrl: banner
      });
@@ -155,7 +155,7 @@ class App extends Component {
         countRs++;
       }
     }
-    this.setState({ 
+    this.setState({
       results: units,
       totalPearls: this.state.totalPearls + pearls,
       allResults: _.orderBy(Summon.Compress(this.state.allResults.concat(units)), ['type','sort','count'],['asc','asc','desc']),
@@ -215,9 +215,9 @@ class App extends Component {
                     ><Button bsStyle="danger" onClick={this.handleClearForm}>Reset All</Button>
                   </Col>
                   <Col xs={12} md={8}>
-                  <b>Summon Data - </b> Total Unit: {(this.state.totalPearls/5)}, 
-                        5* %: {(this.state.ssrCount/this.state.totalPearls*500).toFixed(2)}, 
-                        4* %: {(this.state.srCount/this.state.totalPearls*500).toFixed(2)}, 
+                  <b>Summon Data - </b> Total Unit: {(this.state.totalPearls/5)},
+                        5* %: {(this.state.ssrCount/this.state.totalPearls*500).toFixed(2)},
+                        4* %: {(this.state.srCount/this.state.totalPearls*500).toFixed(2)},
                         3* %: {(this.state.rCount/this.state.totalPearls*500).toFixed(2)}
                   </Col>
                 </Row>
@@ -234,7 +234,7 @@ class App extends Component {
                   </Col>
                 </Row>
               </Grid>
-              ) : null 
+              ) : null
             }
           </Grid>
         </Jumbotron>
