@@ -2,13 +2,13 @@
 	"featured_5":
 	{
 		"rate": 0.2,
-		"cards": ["sasuke28","itachi9"]
+		"units": ["sasuke28","itachi9"]
 	},
 
 	"normal_5":
 	{
 		"rate": 0.9,
-		"cards": ["A",
+		"units": ["A",
 			"bee2",
 			"choji2",
 			"darui",
@@ -103,7 +103,7 @@
 	"4_star":
 	{
 	"rate": 0.62,
-	"cards": ["anko",
+	"units": ["anko",
 			"baki",
 			"choza",
 			"hayate",
@@ -153,7 +153,7 @@
 	"3_star":
 	{
 		"rate": 0.26,
-		"cards": ["anko",
+		"units": ["anko",
 				"baki",
 				"choza",
 				"hayate",
