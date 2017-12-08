@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 function getAvailableBanners() {
-    var request = '/BlazingSimulator/configuration/banners.json';
+    var request = '/Simulator/configuration/banners.json';
     //request = '/configuration/banners.json';
     var instance = axios.create({
         headers: {"accept": "application/json;odata=verbose",
@@ -16,11 +16,11 @@ function getAvailableBanners() {
         return false;
     });
 }
-    
+
 
 function getBannerRates(bannerId, version) {
     var summonValue = 0, summonRates = [];
-    var request = '/BlazingSimulator/configuration/banners/' + bannerId + '.json';
+    var request = '/Simulator/configuration/banners/' + bannerId + '.json';
     //request = '/configuration/banners/' + bannerId + '.json';
 
     var instance = axios.create({
@@ -37,18 +37,18 @@ function getBannerRates(bannerId, version) {
 
                 var rarity = keyName.toString().split('_')[1];
                 var sort = 1;
-                
+
                 switch (rarity) {
                     case '5':
                         sort = 1;
                         break;
                     case '4':
                         sort = 2;
-                        break; 
+                        break;
                     case '3':
                         sort = 3;
                         break;
-                    default: 
+                    default:
                         sort = 4;
                 }
 
@@ -62,7 +62,7 @@ function getBannerRates(bannerId, version) {
 
                     summonRates.push({
                         thumb: "flair flair-" + response.data[keyName].cards[i],
-                        value: summonValue, 
+                        value: summonValue,
                         rarity: rarity,
                         sort: sort,
                         rate: ratePerCard,
