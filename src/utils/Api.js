@@ -18,7 +18,7 @@ function getAvailableBanners() {
 }
 
 
-function getBannerRates(bannerId, version) {
+function getBannerRates(bannerId) {
     var summonValue = 0, summonRates = [];
     var request = '/Simulator/configuration/banners/' + bannerId + '.json';
     //request = '/configuration/banners/' + bannerId + '.json';
@@ -82,7 +82,7 @@ export default {
     getBanners() {
         return getAvailableBanners();
     },
-    getRates(bannerId, version) {
-        return getBannerRates(bannerId, version);
+    getRates(bannerId) {
+        return getBannerRates(bannerId);
     }
 }

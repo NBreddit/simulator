@@ -14,9 +14,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      versionSelection: '',
       bannerSelection: '',
-      versionOptions: [{name:'Global',value:'globalMain'},{name:'Japan',value:'japanMain'}],
       bannerOptions: [''],
       bannerRates: [],
       results: [],
@@ -24,12 +22,11 @@ class App extends Component {
       bannerUrl: '',
       type: 'Standard',
       totalPearls: 0,
-      ssrCount: 0,
-      srCount: 0,
-      rCount: 0,
+      fiveStarCount: 0,
+      fourStarCount: 0,
+      threeStarCount: 0,
       otherCount: 0
     };
-    this.handleVersionSelect = this.handleVersionSelect.bind(this);
     this.handleBannerSelect = this.handleBannerSelect.bind(this);
     this.handleClearForm = this.handleClearForm.bind(this);
     this.handleClearSummons = this.handleClearSummons.bind(this);
@@ -65,9 +62,9 @@ class App extends Component {
       results: [],
       allResults: [],
       totalPearls: 0,
-      ssrCount: 0,
-      srCount: 0,
-      rCount: 0,
+      fiveStarCount: 0,
+      fourStarCount: 0,
+      threeStarCount: 0,
       otherCount: 0,
       type: 'Standard',
       bannerUrl: '',
@@ -87,30 +84,11 @@ class App extends Component {
       results: [],
       allResults: [],
       totalPearls: 0,
-      ssrCount: 0,
-      srCount: 0,
-      rCount: 0,
+      fiveStarCount: 0,
+      fourStarCount: 0,
+      threeStarCount: 0,
       otherCount: 0,
       bannerRates: resetRateCount
-    });
-  }
-
-  handleVersionSelect(e) {
-    let self = this;
-    var version = 'globalMain';
-
-    Api
-      .getBanners(version)
-      .then(function(data) {
-        var options = [];
-
-        for (var [key, value] of Object.entries(data)) {
-          options.push({name:key, value:new Date(value)});
-        }
-
-        self.setState({
-          bannerOptions: _.orderBy(options, ['value'], ['desc'])
-        })
     });
   }
 
@@ -125,7 +103,7 @@ class App extends Component {
      });
 
     Api
-      .getRates(bannerId, self.state.versionSelection)
+      .getRates(bannerId)
       .then(function(data) {
         self.setState({ bannerRates: data })
     });
@@ -159,9 +137,9 @@ class App extends Component {
       results: units,
       totalPearls: this.state.totalPearls + pearls,
       allResults: _.orderBy(Summon.Compress(this.state.allResults.concat(units)), ['type','sort','count'],['asc','asc','desc']),
-      ssrCount: this.state.ssrCount + countSSRs,
-      srCount: this.state.srCount + countSRs,
-      rCount: this.state.rCount + countRs
+      fiveStarCount: this.state.fiveStarCount + countSSRs,
+      fourStarCount: this.state.fourStarCount + countSRs,
+      threeStarCount: this.state.threeStarCount + countRs
     });
   }
 
@@ -216,9 +194,9 @@ class App extends Component {
                   </Col>
                   <Col xs={12} md={8}>
                   <b>Summon Data - </b> Total Unit: {(this.state.totalPearls/5)},
-                        5* %: {(this.state.ssrCount/this.state.totalPearls*500).toFixed(2)},
-                        4* %: {(this.state.srCount/this.state.totalPearls*500).toFixed(2)},
-                        3* %: {(this.state.rCount/this.state.totalPearls*500).toFixed(2)}
+                        5* %: {(this.state.fiveStarCount/this.state.totalPearls*500).toFixed(2)},
+                        4* %: {(this.state.fourStarCount/this.state.totalPearls*500).toFixed(2)},
+                        3* %: {(this.state.threeStarCount/this.state.totalPearls*500).toFixed(2)}
                   </Col>
                 </Row>
                 <Row className="show-grid">
