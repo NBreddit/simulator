@@ -117,7 +117,7 @@ class App extends Component {
   handleBannerSelect(e) {
     let self = this;
     var bannerId = e.target.value.substr(0,e.target.value.indexOf(' '));
-    var banner = '/Simulator/configuration/banners/'  +	bannerId + '.png';
+    var banner = '/Simulator/configuration/banners/'  +	bannerId + '.jpg';
 
     self.setState({
       bannerSelection: e.target.value,
