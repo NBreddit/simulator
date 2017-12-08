@@ -32,8 +32,8 @@ function getBannerRates(bannerId, version) {
         .then(function(response) {
             Object.keys(response.data).map(function(keyName, keyIndex) {
                 var rate = response.data[keyName].rate;
-                var cardCount = response.data[keyName].cards.length;
-                var ratePerCard = rate/cardCount;
+                var unitCount = response.data[keyName].units.length;
+                var ratePerUnit = rate/unitCount;
 
                 var rarity = keyName.toString().split('_')[1];
                 var sort = 1;
@@ -57,15 +57,15 @@ function getBannerRates(bannerId, version) {
                     type = 'b-featured';
                 }
 
-                for (var i = 0; i < cardCount; i++) {
-                    summonValue = ratePerCard + summonValue;
+                for (var i = 0; i < unitCount; i++) {
+                    summonValue = ratePerUnit + summonValue;
 
                     summonRates.push({
-                        thumb: "flair flair-" + response.data[keyName].cards[i],
+                        thumb: "flair flair-" + response.data[keyName].units[i],
                         value: summonValue,
                         rarity: rarity,
                         sort: sort,
-                        rate: ratePerCard,
+                        rate: ratePerUnit,
                         type: type,
                         count: 0
                     });
