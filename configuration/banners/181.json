@@ -1,0 +1,12 @@
+{
+	"featured_5": 
+	{
+		"rate": 0.1,
+		"cards": ["ameyuri","bee1"]
+	},
+	"normal_5":
+	{
+		"rate": 0.9,
+		"cards": ["gengetsu","gengetsu1"]
+	}
+}
