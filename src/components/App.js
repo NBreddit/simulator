@@ -35,7 +35,7 @@ class App extends Component {
     this.handleClearSummons = this.handleClearSummons.bind(this);
     this.single = this.single.bind(this);
     this.multi = this.multi.bind(this);
-    this.setCardCounts = this.setCardCounts.bind(this);
+    this.setUnitCounts = this.setUnitCounts.bind(this);
     this.handleSetType = this.handleSetType.bind(this);
 
     let self = this;
@@ -132,33 +132,33 @@ class App extends Component {
   }
 
   single() {
-    var card = Summon.Single(this.state.bannerRates);
-    this.setCardCounts(card, 5);
+    var unit = Summon.Single(this.state.bannerRates);
+    this.setUnitCounts(unit, 5);
   }
 
   multi() {
-    var cards = Summon.Multi(this.state.bannerRates, this.state.type);
-    this.setCardCounts(cards, 50);
+    var units = Summon.Multi(this.state.bannerRates, this.state.type);
+    this.setUnitCounts(units, 50);
   }
 
-  setCardCounts(cards, pearls) {
+  setUnitCounts(units, pearls) {
     var countSSRs = 0, countSRs = 0, countRs = 0;
-    for(var i=0; i<=cards.length-1; i++)
+    for(var i=0; i<=units.length-1; i++)
     {
-      if (cards[i].sort <= 1) {
+      if (units[i].sort <= 1) {
         countSSRs++;
       }
-      else if (cards[i].sort === 2) {
+      else if (units[i].sort === 2) {
         countSRs++;
       }
-      else if (cards[i].sort === 3) {
+      else if (units[i].sort === 3) {
         countRs++;
       }
     }
     this.setState({ 
-      results: cards,
+      results: units,
       totalPearls: this.state.totalPearls + pearls,
-      allResults: _.orderBy(Summon.Compress(this.state.allResults.concat(cards)), ['type','sort','count'],['asc','asc','desc']),
+      allResults: _.orderBy(Summon.Compress(this.state.allResults.concat(units)), ['type','sort','count'],['asc','asc','desc']),
       ssrCount: this.state.ssrCount + countSSRs,
       srCount: this.state.srCount + countSRs,
       rCount: this.state.rCount + countRs
@@ -215,7 +215,7 @@ class App extends Component {
                     ><Button bsStyle="danger" onClick={this.handleClearForm}>Reset All</Button>
                   </Col>
                   <Col xs={12} md={8}>
-                  <b>Summon Data - </b> Total Cards: {(this.state.totalPearls/5)}, 
+                  <b>Summon Data - </b> Total Unit: {(this.state.totalPearls/5)}, 
                         5* %: {(this.state.ssrCount/this.state.totalPearls*500).toFixed(2)}, 
                         4* %: {(this.state.srCount/this.state.totalPearls*500).toFixed(2)}, 
                         3* %: {(this.state.rCount/this.state.totalPearls*500).toFixed(2)}
@@ -228,7 +228,7 @@ class App extends Component {
                     </Panel>
                   </Col>
                   <Col xs={12} md={6}>
-                    <Panel header={this.state.allResults.length + " unique cards summoned in " + this.state.totalPearls + " pearls used"} bsStyle="primary">
+                    <Panel header={this.state.allResults.length + " unique units summoned in " + this.state.totalPearls + " Pearls used"} bsStyle="primary">
                       <ResultsGrid items={_.chunk(this.state.allResults, 5)} type='all' />
                     </Panel>
                   </Col>
