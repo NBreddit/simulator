@@ -1,13 +1,13 @@
 {
 	"featured_5":
 	{
-		"rate": 0.2,
+		"rate": 0.02,
 		"units": ["sasuke28","itachi9"]
 	},
 
 	"normal_5":
 	{
-		"rate": 0.9,
+		"rate": 0.09,
 		"units": ["A",
 			"bee2",
 			"choji2",
@@ -100,7 +100,7 @@
 			"yamato"]
 	},
 
-	"4_star":
+	"normal_4":
 	{
 	"rate": 0.62,
 	"units": ["anko",
@@ -150,7 +150,7 @@
 			"tsume"]
 	},
 
-	"3_star":
+	"normal_3":
 	{
 		"rate": 0.26,
 		"units": ["anko",
