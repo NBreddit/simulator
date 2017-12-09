@@ -14,7 +14,7 @@ class Header extends React.Component {
                 </Navbar.Header>
                 <Navbar.Collapse>
                 <Nav pullRight>
-                    Created by Coenl, Assets and Stats by Anton
+                    Created by <a href="https://www.reddit.com/user/coenl">Coenl</a>, Assets and Stats by <a href="https://www.reddit.com/user/antonlabz/">Anton</a>
                 </Nav>
                 </Navbar.Collapse>
             </Grid>
