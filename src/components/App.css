@@ -20,13 +20,24 @@
   border-radius:5px;
 }
 
+#help {
+  position: absolute;
+  top: 50px;
+  background: #fff;
+  right: 0;
+  height: 28px;
+  padding: 3px;
+  padding-right: 5px;
+  border-radius: 5px;
+}
+
 body {
-  background-color: #333;
+  background-color: #333!important;
 }
 
 /*main container*/
 .jumbotron {
-  background-color: #f5e0ad;
+  background-color: #f5e0ad!important;
 }
 
 /*column container of every element*/
@@ -41,8 +52,8 @@ body {
 
 /*top bar*/
 .navbar-inverse {
-  background: #25180f;
-  background-image: none;
+  background-color: #25180f!important;
+  background-image: none!important;
 }
 
 /*site name*/
@@ -53,7 +64,7 @@ body {
 /*header text*/
 .navbar-right {
   color: #9d9d9d;
-  margin-top: 15px;
+  margin-top: 15px!important;
 }
 
 .navbar-right a {
