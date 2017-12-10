@@ -19,8 +19,7 @@
 }
 
 .col-md-6 {width: 100%!important}
-.col-md-6:last-child(2) {width: 50%!important}
-.col-md-6:last-child {width: 50%!important}
+.container .container .col-md-6 {width: 50%!important}
 
 .thumb {
 	max-height:50%;
