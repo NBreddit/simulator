@@ -13,13 +13,56 @@
   font-size: large;
 }
 
+/*images on site*/
 .App-image {
   max-height:50%;
   max-width:50%;
+  border-radius:5px;
 }
 
-.col-md-6 {width: 100%!important}
-.container .container .col-md-6 {width: 50%!important}
+body {
+  background-color: #333;
+}
+
+/*main container*/
+.jumbotron {
+  background-color: #f5e0ad;
+}
+
+/*column container of every element*/
+.col-md-6 {
+  width: 100%!important
+}
+
+/*summon results divs*/
+.container .container .col-md-6 {
+  width: 50%!important
+}
+
+/*top bar*/
+.navbar-inverse {
+  background: #25180f;
+  background-image: none;
+}
+
+/*site name*/
+.navbar-inverse .navbar-brand {
+  color: #dcdcdc;
+}
+
+/*header text*/
+.navbar-right {
+  color: #9d9d9d;
+  margin-top: 15px;
+}
+
+.navbar-right a {
+  color: #a7d68b;
+}
+
+.navbar-right a:hover {
+  color: #a7d68b;
+}
 
 .thumb {
 	max-height:50%;
