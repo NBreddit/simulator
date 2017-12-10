@@ -194,9 +194,9 @@ class App extends Component {
                   </Col>
                   <Col xs={12} md={8}>
                   <b>Summon Data - </b> Total Unit: {(this.state.totalPearls/5)},
-                        5* %: {(this.state.fiveStarCount/this.state.totalPearls*500).toFixed(2)},
-                        4* %: {(this.state.fourStarCount/this.state.totalPearls*500).toFixed(2)},
-                        3* %: {(this.state.threeStarCount/this.state.totalPearls*500).toFixed(2)}
+                        <strong>★5</strong> %: {(this.state.fiveStarCount/this.state.totalPearls*500).toFixed(2)},
+                        <strong>★4</strong> %: {(this.state.fourStarCount/this.state.totalPearls*500).toFixed(2)},
+                        <strong>★3</strong> %: {(this.state.threeStarCount/this.state.totalPearls*500).toFixed(2)}
                   </Col>
                 </Row>
                 <Row className="show-grid">
