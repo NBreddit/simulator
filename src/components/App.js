@@ -193,10 +193,10 @@ class App extends Component {
                     ><Button bsStyle="danger" onClick={this.handleClearForm}>Reset All</Button>
                   </Col>
                   <Col xs={12} md={8}>
-                  <b>Summon Data - </b> Total Unit: {(this.state.totalPearls/5)},
-                        <strong>★5</strong> %: {(this.state.fiveStarCount/this.state.totalPearls*500).toFixed(2)},
-                        <strong>★4</strong> %: {(this.state.fourStarCount/this.state.totalPearls*500).toFixed(2)},
-                        <strong>★3</strong> %: {(this.state.threeStarCount/this.state.totalPearls*500).toFixed(2)}
+                  <b>Summon Data - </b> Total Units: {(this.state.totalPearls/5)} ||
+                        <b>★5</b> %: {(this.state.fiveStarCount/this.state.totalPearls*500).toFixed(2)} ||
+                        <b>★4</b> %: {(this.state.fourStarCount/this.state.totalPearls*500).toFixed(2)} ||
+                        <b>★3</b> %: {(this.state.threeStarCount/this.state.totalPearls*500).toFixed(2)}
                   </Col>
                 </Row>
                 <Row className="show-grid">
