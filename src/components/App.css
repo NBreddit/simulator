@@ -132,5 +132,9 @@ td {
 }
 
 .cardType {
+  z-index: -99;
+}
+
+.raritybg {
   z-index: -999;
 }
