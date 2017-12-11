@@ -78,7 +78,7 @@ function getBannerRates(bannerId) {
                             });
 
                             summonRates.push({
-                                thumb: "flair flair-" + response.data[keyName].units[i],
+                                thumb: "https://raw.githubusercontent.com/NBreddit/flairs/master/flairs/" + response.data[keyName].units[i] + ".png",
                                 unitType: unitType,
                                 value: summonValue,
                                 rarity: rarity,
