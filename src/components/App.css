@@ -113,9 +113,10 @@ body {
 }
 
 .rarity {
-  max-height:50%;
-  max-width:50%;
-  margin-left:-60px;
+  z-index: 2;
+  position: absolute;
+  left: 17px;
+  top: 45px;
 }
 
 .counter {
