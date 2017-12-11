@@ -22,7 +22,7 @@ const ResultsGrid = (props) => (
             <tr key={index}>
             {row.map((col, index) =>
                 <td key={index}>
-                    <div className={col.thumb + " " + (col.type.includes('b-featured') ? 'featured' : '')} />
+                    <img src={col.thumb} alt="thumb" className={"flair " + (col.type.includes('b-featured') ? 'featured' : '')} />
                     {col.rarity === '5' ? (
                     <div>
                         <img src={FiveStar} className="rarity" alt="rarity"/>
