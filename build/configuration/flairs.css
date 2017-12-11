@@ -2,10 +2,12 @@
 	display: inline-block;
 	height:40px;
 	width:35px;
-	cursor:pointer;
 	margin-right:9px;
 	margin-top:9px;
+	cursor: initial;
 	background:url(flairs.png) no-repeat -9999px;
+	position: absolute;
+	z-index: 2;
 }
 
 .md [href$="-3rdA"], .flair-3rdA{background-position:0 0;min-width:27px;}
