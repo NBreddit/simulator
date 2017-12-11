@@ -66,6 +66,7 @@
 "bod":
 {
 	"units": ["bee",
+		"choji1",
 		"guy6",
 		"haku1",
 		"hashirama2",
@@ -93,6 +94,7 @@
 {
 	"units": ["bee2",
 		"choji2",
+		"choza",
 		"gaara",
 		"gaara11",
 		"guy4",
@@ -120,7 +122,8 @@
 
 "wis":
 {
-	"units": ["gaara2",
+	"units": ["anko",
+		"gaara2",
 		"gaara7",
 		"hinata7",
 		"itachi",
