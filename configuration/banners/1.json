@@ -1,18 +1,13 @@
 {
 	"featured_5":
 	{
-		"rate": 0.06,
-		"units": ["naruto25",
-			"sasuke23",
-			"gaara11",
-			"lee3",
-			"hinata7",
-			"neji4"]
+		"rate": 0.02,
+		"units": ["sasuke28","itachi9"]
 	},
 
 	"normal_5":
 	{
-		"rate": 0.09,
+		"rate": 0.1,
 		"units": ["A",
 			"bee2",
 			"choji1",
@@ -152,7 +147,7 @@
 
 	"normal_3":
 	{
-		"rate": 0.23,
+		"rate": 0.26,
 		"units": ["anko",
 				"baki",
 				"choza",
