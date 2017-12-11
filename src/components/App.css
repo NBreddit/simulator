@@ -130,3 +130,7 @@ body {
 td {
   padding-left: 30px !important;
 }
+
+.cardType {
+  z-index: -999;
+}
