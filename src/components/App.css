@@ -106,9 +106,9 @@ body {
 }
 
 .rarity {
-    max-height:50%;
-    max-width:50%;
-    margin-left:-60px;
+  max-height:50%;
+  max-width:50%;
+  margin-left:-60px;
 }
 
 .counter {
@@ -131,10 +131,16 @@ td {
   padding-left: 30px !important;
 }
 
-.cardType {
-  z-index: -99;
+.unitType {
+  z-index: 3;
+  position: absolute;
+  top: 13px;
+  left: 24px;
 }
 
 .raritybg {
-  z-index: -999;
+  z-index: 1;
+  position: absolute;
+  top: 16px;
+  left: 27px;
 }
