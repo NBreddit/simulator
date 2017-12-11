@@ -81,12 +81,19 @@ body {
 	display:block;
 }
 
-.featured {
-  border: 2px solid blue;
-  border-radius: 7px;
-  -webkit-box-shadow:0 0 45px blue;
-  -moz-box-shadow: 0 0 4px blue;
-  box-shadow:0 0 4px blue;
+.featured:after {
+  border: 2px solid #ff006d;
+  content: '';
+  height: 35px;
+  display: block;
+  width: 39px;
+  border-radius: 5px;
+  box-shadow: 0 0 4px #ff0254;
+  box-sizing: content-box;
+  padding: 5px;
+  position: absolute;
+  left: -12px;
+  top: -3px;
 }
 
 .lr {
@@ -112,7 +119,9 @@ body {
 }
 
 .counter {
-  margin-left: 30px;
+  position: absolute;
+  top: 40px;
+  right: 10px;
 }
 
 .show-grid {
@@ -129,6 +138,7 @@ body {
 
 td {
   padding-left: 30px !important;
+  position: relative;
 }
 
 .unitType {
@@ -139,7 +149,6 @@ td {
 }
 
 .raritybg {
-  z-index: 1;
   position: absolute;
   top: 16px;
   left: 27px;
