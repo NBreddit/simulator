@@ -14,35 +14,35 @@ import brv from '../images/brv.png';
 import skl from '../images/skl.png';
 import wis from '../images/wis.png';
 
-const ResultsGrid = (props) => (  
-    
+const ResultsGrid = (props) => (
+
     <Table striped condensed>
       <tbody>
         {props.items.map((row, index) =>
             <tr key={index}>
             {row.map((col, index) =>
-                <td key={index}>                   
+                <td key={index}>
                     <div className={col.thumb + " " + (col.type.includes('b-featured') ? 'featured' : '')} />
                     {col.rarity === '5' ? (
                     <div>
                         <img src={FiveStar} className="rarity" alt="rarity"/>
                         <img src={FiveStarBg} className="raritybg" alt="raritybg"/>
-                    </div>) : null } 
+                    </div>) : null }
                     {col.rarity === '4' ? (
                     <div>
                         <img src={FourStar} className="rarity" alt="rarity"/>
                         <img src={FourStarBg} className="raritybg" alt="raritybg"/>
-                    </div>) : null } 
+                    </div>) : null }
                     {col.rarity === '3' ? (
                     <div>
                         <img src={ThreeStar} className="rarity" alt="rarity"/>
                         <img src={ThreeStarBg} className="raritybg" alt="raritybg"/>
-                    </div>) : null } 
-                    {col.cardType === 'hrt' ? (<img src={hrt} className="cardType" alt="cardType"/>) : null } 
-                    {col.cardType === 'bod' ? (<img src={bod} className="cardType" alt="cardType"/>) : null } 
-                    {col.cardType === 'brv' ? (<img src={brv} className="cardType" alt="cardType"/>) : null } 
-                    {col.cardType === 'skl' ? (<img src={skl} className="cardType" alt="cardType"/>) : null } 
-                    {col.cardType === 'wis' ? (<img src={wis} className="cardType" alt="cardType"/>) : null } 
+                    </div>) : null }
+                    {col.unitType === 'hrt' ? (<img src={hrt} className="unitType" alt="unitType"/>) : null }
+                    {col.unitType === 'bod' ? (<img src={bod} className="unitType" alt="unitType"/>) : null }
+                    {col.unitType === 'brv' ? (<img src={brv} className="unitType" alt="unitType"/>) : null }
+                    {col.unitType === 'skl' ? (<img src={skl} className="unitType" alt="unitType"/>) : null }
+                    {col.unitType === 'wis' ? (<img src={wis} className="unitType" alt="unitType"/>) : null }
                     {props.type ==='all' ? ( <span className="counter">x{col.count}</span> ): null}
                 </td>
             )}
@@ -53,9 +53,9 @@ const ResultsGrid = (props) => (
 );
 
 
-ResultsGrid.propTypes = {  
+ResultsGrid.propTypes = {
   items: PropTypes.array.isRequired,
   type: PropTypes.string.isRequired
 };
 
-export default ResultsGrid;  
+export default ResultsGrid;

@@ -26,7 +26,7 @@ function getAvailableBanners() {
 
 function getBannerRates(bannerId) {
     var summonValue = 0, summonRates = [];
-    var cardTypeRequest = getCallPrefix() + 'type.json';
+    var unitTypeRequest = getCallPrefix() + 'type.json';
     var request = getCallPrefix() + 'banners/' + bannerId + '.json';
 
     var instance = axios.create({
@@ -34,9 +34,9 @@ function getBannerRates(bannerId) {
             "content-type": "application/json;odata=verbose"}
     });
 
-    return instance.get(cardTypeRequest)
+    return instance.get(unitTypeRequest)
         .then(function(response) {
-            var cardTypes = response.data;
+            var unitTypes = response.data;
             instance.get(request)
                 .then(function(response) {
                     Object.keys(response.data).map(function(keyName, keyIndex) {
@@ -68,18 +68,18 @@ function getBannerRates(bannerId) {
 
                         for (var i = 0; i < unitCount; i++) {
                             summonValue = ratePerUnit + summonValue;
-                            var cardType = "";
-                            
-                            Object.keys(cardTypes).map(function(typeName, typeIndex) {
-                                if(cardTypes[typeName].units.includes(response.data[keyName].units[i]))
+                            var unitType = "";
+
+                            Object.keys(unitTypes).map(function(typeName, typeIndex) {
+                                if(unitTypes[typeName].units.includes(response.data[keyName].units[i]))
                                 {
-                                    cardType = typeName;
+                                    unitType = typeName;
                                 }
                             });
 
                             summonRates.push({
                                 thumb: "flair flair-" + response.data[keyName].units[i],
-                                cardType: cardType,
+                                unitType: unitType,
                                 value: summonValue,
                                 rarity: rarity,
                                 sort: sort,
