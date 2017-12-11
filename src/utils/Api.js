@@ -3,7 +3,7 @@
 import axios from 'axios';
 
 function getCallPrefix() {
-    return '/Simulator/configuration/';
+    return '/simulator/configuration/';
     //return '/configuration/';
 }
 

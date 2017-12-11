@@ -1,6 +1,6 @@
 {
   "name": "naruto-blazing-summon-simulator",
-  "homepage": "https://NBreddit.github.io/Simulator/",
+  "homepage": "https://NBreddit.github.io/simulator/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
