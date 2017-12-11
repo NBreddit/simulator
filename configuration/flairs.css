@@ -6,7 +6,7 @@
 	margin-top:9px;
 	cursor: initial;
 	background:url(flairs.png) no-repeat -9999px;
-	position: absolute;
+	position: relative;
 	z-index: 2;
 }
 
