@@ -20,6 +20,10 @@
   border-radius:5px;
 }
 
+.container .show-grid:first-of-type .App-image {
+  max-width:100%;
+}
+
 #help {
   position: absolute;
   top: 80px;
@@ -41,17 +45,12 @@ body {
   margin-top: 80px;
 }
 
-/*column container of every element*/
-.col-md-6 {
-  width: 100%!important
-}
-
 /*summon results divs*/
 .container .container .col-md-6 {
   width: 50%!important
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .container .container .row .col-md-6 {
     width: 100%!important
   }
@@ -90,18 +89,35 @@ body {
 }
 
 .featured:after {
-  border: 2px solid #ff006d;
+  border: 2px solid #bd00ff;
   content: '';
-  height: 35px;
   display: block;
-  width: 39px;
+  height: 45px;
+  width: 42px;
+  max-height: 100%;
+  max-width: 100%;
   border-radius: 5px;
   box-shadow: 0 0 4px #ff0254;
-  box-sizing: content-box;
-  padding: 5px;
   position: absolute;
-  left: -12px;
-  top: -3px;
+  box-sizing: content-box;
+  left: -2px;
+  top: -2px;
+}
+
+.rated:after {
+  border: 2px solid #ff0000;
+  content: '';
+  display: block;
+  height: 45px;
+  width: 42px;
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 4px #ff0000;
+  position: absolute;
+  box-sizing: content-box;
+  left: -2px;
+  top: -2px;
 }
 
 .lr {
@@ -120,15 +136,45 @@ body {
   box-shadow:0 0 8px #B700FF;
 }
 
+.raritybg {
+  max-width: 100%;
+}
+
 .rarity {
-  z-index: 2;
+  max-width: 70%;
+  max-height: 14px;
   position: absolute;
-  left: 17px;
-  top: 45px;
+  bottom: -4px;
+  left: -7px;
+}
+
+.unitType {
+  max-width: 50%;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+}
+
+.td {
+  padding-left: 0!important;
+}
+
+.fivestar {background: url('../images/5bg.png');}
+.fourstar {background: url('../images/4bg.png');}
+.threestar {background: url('../images/3bg.png');}
+
+.fivestar,
+.fourstar,
+.threestar {
+  background-position-y: 2px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
 }
 
 .counter {
-
+  display: block;
+  margin-top: 5px;
 }
 
 .show-grid {
@@ -143,20 +189,26 @@ body {
   background-color: lightgreen;
 }
 
+/*summon results container*/
+.container .container .show-grid:nth-of-type(2) .col-md-6:first-of-type td {
+  padding-bottom: 15px!important;
+}
+
 td {
-  padding-left: 30px !important;
+  padding-top: 10px!important;
+}
+
+/*main container for each unit*/
+.unitContainer {
   position: relative;
 }
 
-.unitType {
-  z-index: 3;
-  position: absolute;
-  top: 13px;
-  left: 24px;
+/*reset buttons*/
+.col-xs-12 {
+  width: auto!important;
 }
 
-.raritybg {
-  position: absolute;
-  top: 16px;
-  left: 27px;
+/*column container of every element - MUST BE UNDER COL-XS-12*/
+.col-md-6 {
+  width: 100%!important
 }

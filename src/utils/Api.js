@@ -65,6 +65,9 @@ function getBannerRates(bannerId) {
                         if (keyName.toString().split('_')[0] === 'featured') {
                             type = 'b-featured';
                         }
+                        if (keyName.toString().split('_')[0] === 'rated') {
+                            type = 'a-rated';
+                        }
 
                         for (var i = 0; i < unitCount; i++) {
                             summonValue = ratePerUnit + summonValue;
@@ -78,7 +81,7 @@ function getBannerRates(bannerId) {
                             });
 
                             summonRates.push({
-                                thumb: "https://raw.githubusercontent.com/NBreddit/flairs/master/flairs/" + response.data[keyName].units[i] + ".png",
+                                thumb: "https://raw.githubusercontent.com/NBreddit/flairs/master/" + response.data[keyName].units[i] + ".png",
                                 unitType: unitType,
                                 value: summonValue,
                                 rarity: rarity,

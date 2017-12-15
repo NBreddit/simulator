@@ -43,6 +43,11 @@ function specialSummon(allRates, type, randomValue) {
             summonPool.push(copy[i]);
             rateTotal = copy[i].rate + rateTotal;
         }
+        if ((copy[i].type.includes('a-rated') && type === 'fGSSR') || (copy[i].sort === 1 && type === 'GSSR')) {
+            copy[i].indexPos = i;
+            summonPool.push(copy[i]);
+            rateTotal = copy[i].rate + rateTotal;
+        }
     }
 
     //Set a new multiplier and the new pool values

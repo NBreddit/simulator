@@ -1,13 +1,8 @@
 .flair {
-	display: inline-block;
-	height:40px;
-	width:35px;
-	margin-right:9px;
-	margin-top:9px;
-	cursor: initial;
-	background:url(flairs.png) no-repeat -9999px;
-	position: relative;
-	z-index: 2;
+	max-height: 100%;
+	max-width: 100%;
+	padding-bottom: 2px;
+	padding-left: 3px;
 }
 
 .md [href$="-3rdA"], .flair-3rdA{background-position:0 0;min-width:27px;}
