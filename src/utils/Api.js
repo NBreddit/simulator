@@ -81,7 +81,7 @@ function getBannerRates(bannerId) {
                             });
 
                             summonRates.push({
-                                thumb: '/simulator/src/flairs/' + response.data[keyName].units[i] + ".png",
+                                thumb: getCallPrefix() + '/flairs/' + response.data[keyName].units[i] + ".png",
                                 unitType: unitType,
                                 value: summonValue,
                                 rarity: rarity,
